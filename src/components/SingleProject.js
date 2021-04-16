@@ -1,4 +1,4 @@
-import React , {useState} from 'react'
+import React , {useState,useEffect} from 'react'
 import './projects.css'
 import './SingleProject.css'
 import {Button , Modal} from 'react-bootstrap'
@@ -27,10 +27,11 @@ const handleModal = () => {
 
 
 
+
     return (
         <div>
             <modal/>
-         <img onClick={handleModal}  onMouseLeave={changeProjectPhoto2} onMouseEnter={((e)=>{
+         <img  onClick={handleModal}  onMouseLeave={changeProjectPhoto2} onMouseEnter={((e)=>{
                   changeProjectPhoto(e)          
            })} className="project-image" src={img} alt=""/>
         <Modal class="modal-sm"  show={openModal}>
