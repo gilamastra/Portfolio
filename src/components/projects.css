@@ -1,0 +1,49 @@
+.container{
+}
+.mt-8{
+    margin-top:120px;
+}
+.projects-container{
+    margin-top:100px;
+}
+.projects-title{
+    font-size:3.4rem;
+    text-align:center;
+    font-family:comfortaa;
+}
+
+.project-container{
+    text-align:center;
+    margin-top:50px;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+}
+
+
+.single-project-image img{
+    width:100%;
+    margin:20px 0;
+    max-width:720px;
+    height:100%;
+    cursor: pointer;
+}
+.single-project-image img:hover{
+    filter: brightness(0.5);
+    animation: abreaboca  ease 5s;
+    animation-iteration-count:1;
+    }
+.single-project-image img:hover >  button {
+    background-color: rgb(226, 0, 0)
+}       
+
+
+
+@media screen and (max-width:576px){
+
+.single-project-image img {
+   margin:20px 0;
+}
+
+    
+}
