@@ -1,115 +1,104 @@
-.home-container{
-
+.home-container {
 }
-.home-container__bg{
-    width:100vw;
-    background-position: center center;
-    height:100vh;
-    z-index:-1;
-    background-attachment: fixed;
-    background-size:100% 100%;
-    background: linear-gradient(0deg, rgb(15, 2, 13), rgba(0, 0, 0, 0.52)),
-    url('../img/fotis-fotopoulos-DuHKoV44prg-unsplash\ \(1\).jpg')  center center fixed ;
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction:column;
+.home-container__bg {
+  width: 100%;
+  background-position: center center;
+  height: 100vh;
+  z-index: -1;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  overflow-x: hidden;
+  background: linear-gradient(0deg, #0f0017, rgba(0, 0, 0, 0.52)),
+    url("../img/fotis-fotopoulos-DuHKoV44prg-unsplash\ \(1\).jpg")
+      center center fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.home-title{
-    color:rgb(96, 23, 109);
-    font-size:5rem;
-    font-weight:800;
-    font-family:Comfortaa;
-    margin:0 auto;
-    text-align:center;
-color: #FFFFFF;
-text-shadow: #FFF 0px 0px 5px,
-rgb(0, 0, 0) 0px 0px 10px,
-rgb(47, 5, 44) 0px 0px 15px,
-#9010a7 0px 0px 10px,
-#5c0e58 0px 0px 16px,
-#6b1b80 0px 0px 21px,
-#410e27 0px 0px 25px,
-#4c1566 0px 0px 30px;
+.home-title {
+  color: rgb(96, 23, 109);
+  font-size: 5rem;
+  font-weight: 800;
+  font-family: Comfortaa;
+  margin: 0 auto;
+  text-align: center;
+  color: #ffffff;
+  text-shadow: #fff 0px 0px 5px, rgb(0, 0, 0) 0px 0px 10px,
+    rgb(47, 5, 44) 0px 0px 15px, #510b5d 0px 0px 10px,
+    #5c0e58 0px 0px 16px, #3a1242 0px 0px 21px, #410e27 0px 0px 25px,
+    #0f0017 0px 0px 30px;
 }
-.home-subtitle{
-    color:rgb(255, 255, 255);
-    font-size:2.5rem;
-    font-family:Comfortaa;
-    margin:5px 0 55px 0 ;
+.home-subtitle {
+  color: rgb(255, 255, 255);
+  font-size: 2.5rem;
+  font-family: Comfortaa;
+  margin: 5px 0 55px 0;
 }
-.home-list{
-    display:flex;
-    justify-content: space-around;
+.home-list {
+  display: flex;
+  justify-content: space-around;
 }
-.home-list a{
-    color:rgb(255, 255, 255);
-    font-size:1.8rem;
-    font-family:Comfortaa;  
-    padding:0 40px;
-    text-decoration:none;
-    text-align:center;
+.home-list a {
+  color: rgb(255, 255, 255);
+  font-size: 1.8rem;
+  font-family: Comfortaa;
+  padding: 0 40px;
+  text-decoration: none;
+  text-align: center;
 }
-.home-list a:hover{
-    color: rgb(179, 179, 179);
-    transition:0.4s;
-        text-decoration:none;
-        cursor: pointer;
-
+.home-list a:hover {
+  color: rgb(179, 179, 179);
+  transition: 0.4s;
+  text-decoration: none;
+  cursor: pointer;
 }
-.home-icon{
-    width:40px;
-    height:40px;
-    align-items:center;
-    color:rgb(255, 255, 255);
-    padding:0 5px;
+.home-icon {
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  padding: 0 5px;
 }
 
-.home-icons{
-    display:flex;
-    align-items:center; 
-    margin-top: 15px;
+.home-icons {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
 }
-.home-icons span{
-color:white;
-font-family:comfortaa;
-margin:0 7px 0 15px;
-}
-
-
-
-.git:hover ,.resume:hover,.linkedin:hover{
-    transition:.2s ease;
-    animation:icon 1s;
-    animation-iteration-count: 1;
+.home-icons span {
+  color: white;
+  font-family: comfortaa;
+  margin: 0 7px 0 15px;
 }
 
+.git:hover,
+.resume:hover,
+.linkedin:hover {
+  transition: 0.2s ease;
+  animation: icon 1s;
+  animation-iteration-count: 1;
+}
 
 @keyframes icon {
-    
-0%{
-transform: rotate(0deg);
-
+  0% {
+    transform: rotate(0deg);
+  }
+  33% {
+    transform: rotate(20deg);
+  }
+  66% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
-33%{
-  transform: rotate(20deg);
-
-}
-66%{
- transform: rotate(-20deg);
-
-}
-100%{
- transform: rotate(0deg);
-
-}
-
-}
-@media screen and  (max-width :768px){
-    .home-list{
-        display:none
-    }
-    .home-title{
-        font-size:65px;
-    }
+@media screen and (max-width: 768px) {
+  .home-list {
+    display: none;
+  }
+  .home-title {
+    font-size: 65px;
+  }
 }
