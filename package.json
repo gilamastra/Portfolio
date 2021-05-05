@@ -18,8 +18,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.2",
+    "react-slick": "^0.28.1",
     "react-smooth-scrollbar": "^8.0.6",
     "react-spinners": "^0.10.6",
+    "slick-carousel": "^1.8.1",
     "smooth-scrollbar": "^8.6.1",
     "styled-components": "^5.2.3",
     "web-vitals": "^1.1.1"
