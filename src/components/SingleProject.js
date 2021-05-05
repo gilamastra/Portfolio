@@ -26,23 +26,37 @@ const Div = styled.div`
   height: 100%;
 
   p {
-    position: absolute;
-    background: #0f0017;
-    height: 45px;
-    width: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    bottom: 15px;
-    right: 15px;
-    z-index: 3;
+    box-shadow: inset 0px 1px 0px 0px #e184f3;
+    background: linear-gradient(to bottom, #701385 5%, #8a0da3 100%);
+    background-color: #701385;
+    border-radius: 6px;
+    border: 1px solid #9b20b3;
     cursor: pointer;
-    font-weight: bolder;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    text-shadow: 0px 1px 0px #660c78;
+    text-transform: uppercase;
     :hover {
-      background: white;
-      transition: 0.25s;
-      color: black;
+      filter: brightness(0.85);
+      transition: all 0.25s;
+    }
+    :not(:hover) {
+      filter: brightness(1);
+      transition: all 0.25s;
+    }
+    :active {
+      bottom: 14px;
+    }
+    @media screen and (max-width: 768px) {
+      display: block;
+      margin: 5px 0;
     }
   }
 

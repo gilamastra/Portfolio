@@ -1,9 +1,5 @@
 .skills {
-  background: linear-gradient(
-    180deg,
-    #0f0017 0%,
-    rgba(42, 42, 42, 1) 24%
-  );
+  background: #2e2e2e;
   padding-top: 100px;
 }
 .skills-title {
@@ -16,7 +12,7 @@
 }
 .skills-icon {
   font-size: 6rem;
-  color: #651f74;
+  color: #701385;
 }
 .skills-iconTitle {
   color: rgb(255, 255, 255);

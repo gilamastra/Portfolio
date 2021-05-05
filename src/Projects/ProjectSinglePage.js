@@ -5,8 +5,11 @@ import { AiOutlineExport, AiOutlineGithub } from "react-icons/ai";
 import styled from "styled-components";
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
+import ClipLoader from "react-spinners/ScaleLoader";
+
 import "slick-carousel/slick/slick-theme.css";
 import TechsUsed from "./TechsUsed";
+import About from "./About";
 const ProjectSinglePage = () => {
   const [images, setImages] = useState([]);
   const [imageUrl, setImageUrl] = useState([""]);
@@ -20,6 +23,7 @@ const ProjectSinglePage = () => {
   const projectName = useParams("project");
   const [projects, setProjects] = useState(" ");
   const history = useHistory();
+  const [isLoading, setIsLoading] = useState(true);
 
   const getProjects = () => {
     db.collection("projects")
@@ -35,16 +39,20 @@ const ProjectSinglePage = () => {
         setImages(result.items);
       });
     });
+    setIsLoading(false);
   };
   useEffect(() => {
     fetchImages();
     getProjects();
+
+    setIsLoading(true);
   }, []);
+
   return (
-    <div>
-      {projects && (
-        <div className="container">
-          <Container>
+    <div style={{ height: "100%" }}>
+      <Container>
+        {projects && (
+          <div className="container">
             <Title>{projects.name}</Title>
             <SubTitle>{projects.description}</SubTitle>
             <Button>
@@ -54,7 +62,7 @@ const ProjectSinglePage = () => {
               </a>
             </Button>
             <ButtonGit>
-              <a href={projects.demo}>
+              <a href={projects.projectUrl} target="_blank" rel="">
                 {" "}
                 PROJECT {<AiOutlineGithub fontSize={30} />}
               </a>
@@ -78,26 +86,43 @@ const ProjectSinglePage = () => {
                 })}{" "}
               </Carrousel>
             </SliderContainer>
-          </Container>
-        </div>
-      )}
+            <TechsUsed projects={projects} />
+            <About />
+          </div>
+        )}
+      </Container>
     </div>
   );
 };
-const Container = styled.div``;
+const Container = styled.div`
+  height: 100%;
+  min-height: 100vh;
+  background: rgb(33, 33, 33);
+  background: linear-gradient(
+    90deg,
+    rgba(18, 18, 18, 1) 0%,
+    rgba(42, 42, 42, 1) 100%
+  );
+`;
 
 const Title = styled.h2`
   color: rgb(181, 181, 181);
   font-family: "Lato" !important;
-  margin-top: 60px;
+  padding-top: 60px;
   font-weight: 900;
   font-size: 51px;
+  @media screen and (max-width: 768px) {
+    font-size: 40px;
+  }
 `;
 const SubTitle = styled.h2`
   color: rgb(150, 150, 150);
   margin-top: 5px;
   font-weight: 400;
   font-size: 19px;
+  @media screen and (max-width: 768px) {
+    font-size: 18px;
+  }
 `;
 const Button = styled.button`
   a {
@@ -131,6 +156,10 @@ const Button = styled.button`
     position: relative;
     top: 1px;
   }
+  @media screen and (max-width: 768px) {
+    display: block;
+    margin: 5px 0;
+  }
 `;
 
 const ButtonGit = styled.button`
@@ -161,13 +190,21 @@ const ButtonGit = styled.button`
     position: relative;
     top: 1px;
   }
+  @media screen and (max-width: 768px) {
+    display: block;
+    margin: 15px 0;
+  }
 `;
 const SliderContainer = styled.div``;
 const Carrousel = styled(Slider)`
   width: 70%;
   z-index: 10;
-  display: flex !important;
-  justify-content: center !important;
+
+  @media screen and (max-width: 768px) {
+    width: 90%;
+    justify-self: center;
+    margin: 25px auto;
+  }
 
   ul li button {
     &:before {
@@ -185,11 +222,19 @@ const Carrousel = styled(Slider)`
 `;
 const ImgCarrousel = styled.img`
   border-radius: 8px;
-  box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
+  box-shadow: rgb(0 0 0 /20%) 0px 26px 30px -10px,
     rgb(0 0 0 /73%) 0px 16px 10px -10px;
   width: 100% !important;
   z-index: 10;
 
   height: 100%;
+`;
+
+const Center = styled.div`
+  display: flex;
+  justify-content: center;
+  background: #0f0017;
+  align-items: center;
+  height: 100vh;
 `;
 export default ProjectSinglePage;

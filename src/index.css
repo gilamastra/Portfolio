@@ -85,19 +85,17 @@ time,
 mark,
 audio,
 video {
-  margin: 0;
-  padding: 0;
-  border: 0;
   font-family: comfortaa, lato !important;
   font-size: 100%;
   font: inherit;
-  vertical-align: baseline;
   list-style: none;
   text-decoration: none !important;
 }
-
+a {
+  color: unset !important;
+}
 body {
-  background-color: #2f2f2f !important;
+  background: #2f2f2f !important;
 }
 /* make sure to set some focus styles for accessibility */
 :focus {
