@@ -13,7 +13,7 @@ function Menu() {
     setSidebar(!sidebar);
   };
   return (
-    <>
+    <div className="menuContainer">
       <div className="navbar">
         <Link
           to="#"
@@ -51,7 +51,7 @@ function Menu() {
           })}
         </ul>
       </nav>
-    </>
+    </div>
   );
 }
 

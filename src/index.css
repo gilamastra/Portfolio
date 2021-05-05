@@ -86,10 +86,6 @@ mark,
 audio,
 video {
   font-family: comfortaa, lato !important;
-  font-size: 100%;
-  font: inherit;
-  list-style: none;
-  text-decoration: none !important;
 }
 a {
   color: unset !important;

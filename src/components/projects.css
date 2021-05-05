@@ -23,12 +23,8 @@
 .single-project-image img {
   width: 100%;
   margin: 20px 0;
-  max-width: 720px;
   height: 100%;
   cursor: pointer;
-}
-.single-project-image img:hover {
-  transition: filter 0.25s;
 }
 
 @media screen and (max-width: 576px) {

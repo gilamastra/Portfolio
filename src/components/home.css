@@ -7,7 +7,7 @@
   background: linear-gradient(
       0deg,
       rgba(112, 19, 133, 0.3),
-      rgba(0, 0, 0, 0.52)
+      rgba(0, 0, 0, 0.829)
     ),
     url("../img/fotis-fotopoulos-DuHKoV44prg-unsplash\ \(1\).jpg");
   display: flex;
@@ -99,6 +99,11 @@
     display: none;
   }
   .home-title {
-    font-size: 65px;
+    font-size: 2.7rem;
+  }
+  .home-subtitle {
+    font-size: 2rem;
+
+    margin: 5px 0 0px 0;
   }
 }

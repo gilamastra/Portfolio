@@ -43,6 +43,9 @@ const Div = styled.div`
     bottom: 15px;
     text-shadow: 0px 1px 0px #660c78;
     text-transform: uppercase;
+    @media screen and (max-width: 1000px) {
+      bottom: 25px;
+    }
     :hover {
       filter: brightness(0.85);
       transition: all 0.25s;
@@ -160,7 +163,11 @@ const ProjectName = styled.h2`
   right: 15px;
   font-size: 2.5rem;
   z-index: 3;
-
   bottom: 70px;
+  @media screen and (max-width: 1000px) {
+    font-size: 1.9rem;
+    z-index: 3;
+    bottom: 70px;
+  }
 `;
 export default SingleProject;
