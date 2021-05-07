@@ -3,6 +3,7 @@ import { useHistory, useParams } from "react-router";
 import { db, storage } from "../firebase";
 import { AiOutlineExport, AiOutlineGithub } from "react-icons/ai";
 import styled from "styled-components";
+import { AiOutlineRollback } from "react-icons/ai";
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
 import ClipLoader from "react-spinners/ScaleLoader";
@@ -10,6 +11,7 @@ import ClipLoader from "react-spinners/ScaleLoader";
 import "slick-carousel/slick/slick-theme.css";
 import TechsUsed from "./TechsUsed";
 import About from "./About";
+import { Link } from "react-router-dom";
 const ProjectSinglePage = () => {
   const [images, setImages] = useState([]);
   const [imageUrl, setImageUrl] = useState([""]);
@@ -53,20 +55,28 @@ const ProjectSinglePage = () => {
       <Container>
         {projects && (
           <div className="container">
+            <Link to="/">
+              <RollbackIcon />
+            </Link>
             <Title>{projects.name}</Title>
-            <SubTitle>{projects.description}</SubTitle>
-            <Button>
-              <a href={projects.demo}>
+            <SubTitle>{projects.subTitle || ""}</SubTitle>
+            <a href={projects.demo} target="_blank" rel="noreferrer">
+              <Button>
                 {" "}
                 Check the Demo {<AiOutlineExport fontSize={30} />}
-              </a>
-            </Button>
-            <ButtonGit>
-              <a href={projects.projectUrl} target="_blank" rel="">
+              </Button>
+            </a>
+
+            <a
+              href={projects.projectUrl}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <ButtonGit>
                 {" "}
                 PROJECT {<AiOutlineGithub fontSize={30} />}
-              </a>
-            </ButtonGit>
+              </ButtonGit>
+            </a>
             <SliderContainer>
               <Carrousel {...settings}>
                 {images.map((image, index) => {
@@ -87,7 +97,7 @@ const ProjectSinglePage = () => {
               </Carrousel>
             </SliderContainer>
             <TechsUsed projects={projects} />
-            <About />
+            <About projects={projects} />
           </div>
         )}
       </Container>
@@ -95,14 +105,24 @@ const ProjectSinglePage = () => {
   );
 };
 const Container = styled.div`
+  min-height: 105vh;
   height: 100%;
-  min-height: 100vh;
   background: rgb(33, 33, 33);
   background: linear-gradient(
     90deg,
     rgba(18, 18, 18, 1) 0%,
     rgba(42, 42, 42, 1) 100%
   );
+`;
+const RollbackIcon = styled(AiOutlineRollback)`
+  color: rgb(180, 180, 180);
+  font-size: 35px;
+  z-index: 10000;
+  margin-top: 5px;
+  background: black;
+  cursor: pointer;
+  position: fixed;
+  box-shadow: 0px 0px 5px 0px #e184f3;
 `;
 
 const Title = styled.h2`
@@ -197,7 +217,7 @@ const ButtonGit = styled.button`
 `;
 const SliderContainer = styled.div``;
 const Carrousel = styled(Slider)`
-  width: 70%;
+  width: 80%;
   z-index: 10;
 
   @media screen and (max-width: 768px) {

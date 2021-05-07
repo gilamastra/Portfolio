@@ -1,6 +1,6 @@
 .menuContainer {
-  z-index: 1000;
-  position: absolute;
+  z-index: 10000;
+  position: fixed;
 }
 .navbar {
   height: 80px;

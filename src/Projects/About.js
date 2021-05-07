@@ -1,18 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const About = () => {
+const About = ({ projects }) => {
   return (
     <Container>
       <h2>About this project</h2>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        Architecto excepturi sed, voluptatum impedit, illum repellat
-        debitis quasi quo quibusdam nemo mollitia, tenetur voluptates
-        explicabo. Ratione fugit similique, earum consequatur atque
-        ipsum, ab iste beatae nisi magni voluptatibus adipisci id
-        quam.
-      </p>
+      <p>{projects.description}</p>
     </Container>
   );
 };
@@ -25,6 +18,8 @@ const Container = styled.div`
     color: rgb(180, 180, 180);
   }
   p {
+    font-size: 20px;
+    max-width: 800px;
     color: rgb(150, 150, 150);
   }
 `;

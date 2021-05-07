@@ -27,25 +27,21 @@ const Div = styled.div`
 
   p {
     box-shadow: inset 0px 1px 0px 0px #e184f3;
-    background: linear-gradient(to bottom, #701385 5%, #8a0da3 100%);
-    background-color: #701385;
+    background-color: rgb(40, 40, 40);
     border-radius: 6px;
-    border: 1px solid #9b20b3;
+    border: 1px solid black;
+    display: inline-block;
     cursor: pointer;
     color: #ffffff;
     font-family: Arial;
     font-size: 15px;
+    bottom: 16px;
     font-weight: bold;
-    padding: 6px 24px;
-    text-decoration: none;
     position: absolute;
     right: 15px;
-    bottom: 15px;
-    text-shadow: 0px 1px 0px #660c78;
-    text-transform: uppercase;
-    @media screen and (max-width: 1000px) {
-      bottom: 25px;
-    }
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #9b14b3;
     :hover {
       filter: brightness(0.85);
       transition: all 0.25s;
@@ -58,11 +54,9 @@ const Div = styled.div`
       bottom: 14px;
     }
     @media screen and (max-width: 768px) {
-      display: block;
-      margin: 5px 0;
+      padding: 4px 12px;
     }
   }
-
   Img {
     filter: brightness(0.85);
     z-index: 1;
