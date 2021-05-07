@@ -1,11 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./projects.css";
-import projectsData from "../projects.json";
 import SingleProject from "./SingleProject";
 import { Link } from "react-router-dom";
-import { db } from "../firebase";
 
-function Projects({ project1, project1Hover }) {
+function Projects({ project1, project2, project4 }) {
   return (
     <div
       id="projects"
@@ -25,7 +23,13 @@ function Projects({ project1, project1Hover }) {
         </div>
 
         <div className="single-project-image col-sm col-xm-12 ">
-          <SingleProject className="img" img={project1} />
+          <Link to="/projects/SlackClone">
+            <SingleProject
+              projectName={"Slack Clone"}
+              className="img"
+              img={project2}
+            />
+          </Link>
         </div>
       </div>
 
@@ -35,7 +39,14 @@ function Projects({ project1, project1Hover }) {
         </div>
 
         <div className="single-project-image col-sm col-xm-12 ">
-          <SingleProject className="img" img={project1} />
+          <Link to="/projects/PlantManager">
+            <SingleProject
+              color="black"
+              projectName={"Plant Manager"}
+              className="img"
+              img={project4}
+            />
+          </Link>
         </div>
       </div>
     </div>

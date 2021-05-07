@@ -23,6 +23,8 @@
 .single-project-image img {
   width: 100%;
   margin: 20px 0;
+  object-fit: contain;
+  max-height: 270px;
   height: 100%;
   cursor: pointer;
 }

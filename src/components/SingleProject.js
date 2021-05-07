@@ -1,9 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./projects.css";
 import styled from "styled-components";
 import "./SingleProject.css";
-import { Button, Modal } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
 function SingleProject({ img, projectName }) {
   return (
@@ -43,13 +41,10 @@ const Div = styled.div`
     text-decoration: none;
     text-shadow: 0px 1px 0px #9b14b3;
     :hover {
-      filter: brightness(0.85);
-      transition: all 0.25s;
+      filter: brightness(0.65);
+      transition: filter 0.25s;
     }
-    :not(:hover) {
-      filter: brightness(1);
-      transition: all 0.25s;
-    }
+
     :active {
       bottom: 14px;
     }

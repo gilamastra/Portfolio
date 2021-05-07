@@ -12,8 +12,9 @@ import "slick-carousel/slick/slick-theme.css";
 import TechsUsed from "./TechsUsed";
 import About from "./About";
 import { Link } from "react-router-dom";
+import MenuProjects from "./MenuProjects";
 const ProjectSinglePage = () => {
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState("");
   const [imageUrl, setImageUrl] = useState([""]);
   const settings = {
     dots: true,
@@ -39,33 +40,44 @@ const ProjectSinglePage = () => {
     let result = await fileRef.listAll().then((result) => {
       result.items.map((item) => {
         setImages(result.items);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 1000);
       });
     });
-    setIsLoading(false);
   };
   useEffect(() => {
     fetchImages();
     getProjects();
 
     setIsLoading(true);
-  }, []);
+  }, [MenuProjects]);
 
   return (
     <div style={{ height: "100%" }}>
       <Container>
-        {projects && (
+        {images && (
           <div className="container">
+            <MenuProjects></MenuProjects>
+
             <Link to="/">
               <RollbackIcon />
             </Link>
             <Title>{projects.name}</Title>
             <SubTitle>{projects.subTitle || ""}</SubTitle>
-            <a href={projects.demo} target="_blank" rel="noreferrer">
-              <Button>
-                {" "}
-                Check the Demo {<AiOutlineExport fontSize={30} />}
-              </Button>
-            </a>
+
+            {projects.demo && (
+              <a
+                href={projects.demo}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Button>
+                  {" "}
+                  Check the Demo {<AiOutlineExport fontSize={30} />}
+                </Button>
+              </a>
+            )}
 
             <a
               href={projects.projectUrl}
@@ -241,7 +253,9 @@ const Carrousel = styled(Slider)`
   }
 `;
 const ImgCarrousel = styled.img`
+  max-height: 600px;
   border-radius: 8px;
+  object-fit: contain;
   box-shadow: rgb(0 0 0 /20%) 0px 26px 30px -10px,
     rgb(0 0 0 /73%) 0px 16px 10px -10px;
   width: 100% !important;

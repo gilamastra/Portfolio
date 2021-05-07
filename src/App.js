@@ -4,7 +4,8 @@ import Projects from "./components/projects.js";
 import { useEffect, useRef, useState } from "react";
 import Skills from "./components/skills.js";
 import project1 from "./img/netflixProjectPicture1.png";
-import project1Hover from "./img/netflixProjectPicture2.png";
+import project2 from "./img/SlackClone1.png";
+import project4 from "./img/PlantManager2.png";
 import styled from "styled-components";
 import ClipLoader from "react-spinners/ScaleLoader";
 
@@ -39,7 +40,7 @@ function App(props) {
       ) : (
         <div className="App">
           <Switch>
-            <Route path="/projects/:project">
+            <Route path="/projects/:project" exact>
               <ProjectSinglePage />
             </Route>
 
@@ -49,7 +50,8 @@ function App(props) {
               <Skills />
               <Projects
                 project1={project1}
-                project1Hover={project1Hover}
+                project4={project4}
+                project2={project2}
               />
             </Route>
           </Switch>

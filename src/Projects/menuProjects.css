@@ -1,0 +1,104 @@
+.menuContainer-projects {
+  z-index: 10000;
+  position: fixed;
+  right: 100px;
+}
+.navbar-projects {
+  height: 80px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  position: absolute;
+}
+.menu-bars-projects {
+  margin-left: 2rem;
+  font-size: 2rem;
+  background: none;
+}
+.nav-menu-projects {
+  background-color: #0a020a;
+  width: 28%;
+  min-width: 200px;
+  max-width: 350px;
+  display: flex;
+
+  justify-content: center;
+  height: 100%;
+  position: fixed;
+  right: 0;
+  transition: 850ms;
+}
+
+.nav-menu.active-projects {
+  right: -350px;
+  transition: 350ms;
+}
+
+.nav-text-projects {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  list-style: none;
+  height: 60px;
+}
+
+.nav-text-projects a {
+  text-decoration: none;
+  color: #f5f5f5 !important;
+  font-size: 22px;
+  width: 95%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  justify-content: center;
+}
+
+.nav-text-projects a:hover {
+  background-color: #471b45;
+}
+
+.nav-menu-items-projects {
+  width: 100%;
+}
+
+.navbar-toggle-projects {
+  background-color: #0a020a;
+  width: 100%;
+  height: 80px;
+  display: flex;
+
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 35px;
+}
+
+span {
+  margin-left: 16px;
+}
+.projectSingle-menu {
+  margin-bottom: 30px;
+}
+.projectSingle-menu > h1 {
+  margin: 80px 0;
+  cursor: pointer;
+  font-size: 28px;
+  color: rgb(206, 206, 206);
+}
+.projectSingle-menu > h1:hover {
+  text-decoration: underline;
+  color: rgb(153, 153, 153);
+  transition: 250ms;
+}
+
+@media screen and (max-width: 828px) {
+  .projectSingle-menu > h1 {
+    margin: 30px 0;
+    cursor: pointer;
+    font-size: 18px;
+    color: rgb(206, 206, 206);
+  }
+}
