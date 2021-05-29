@@ -6,7 +6,6 @@ import styled from "styled-components";
 import { AiOutlineRollback } from "react-icons/ai";
 import "slick-carousel/slick/slick.css";
 import Slider from "react-slick";
-import ClipLoader from "react-spinners/ScaleLoader";
 
 import "slick-carousel/slick/slick-theme.css";
 import TechsUsed from "./TechsUsed";

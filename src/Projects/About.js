@@ -12,7 +12,9 @@ const About = ({ projects }) => {
 
 const Container = styled.div`
   margin-top: 35px;
+  height: 100%;
   position: relative;
+  padding-bottom: 35px;
   h2 {
     margin-bottom: 15px;
     color: rgb(180, 180, 180);

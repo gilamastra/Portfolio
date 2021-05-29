@@ -53,7 +53,7 @@ const Div = styled.div`
     }
   }
   Img {
-    filter: brightness(0.85);
+    filter: brightness(0.45);
     z-index: 1;
   }
   &::before {
